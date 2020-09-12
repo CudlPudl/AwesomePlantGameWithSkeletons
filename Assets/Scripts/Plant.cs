@@ -70,6 +70,8 @@ public class Plant : MonoBehaviour
     private void Awake()
     {
         _nutritionTimer = _nutritionCooldown;
+        //Avoid setting the correct growth state one frame too late.
+        _blendShape.SetBlendValue(GetPlantSize());
     }
 
     private void Update()
