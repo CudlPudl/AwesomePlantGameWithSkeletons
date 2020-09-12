@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 4779841275261609989}
   - component: {fileID: 8501304909209593760}
   - component: {fileID: 5917242328542090090}
+  - component: {fileID: 5152514827941207671}
+  - component: {fileID: 4025138572115073955}
   m_Layer: 0
   m_Name: Pot
   m_TagString: Untagged
@@ -80,6 +82,48 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!65 &5152514827941207671
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5268852007414248127}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.2718202, y: 0.8715966, z: 1.2718203}
+  m_Center: {x: 0, y: 0.4357983, z: -0.000000029802322}
+--- !u!114 &4025138572115073955
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5268852007414248127}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9dfec1af5ddf8ca47ae2da62465f2f96, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnTappedEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4667308634468664694}
+        m_MethodName: AddPlant
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  OnReleasedEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &5801397702780562595
 GameObject:
   m_ObjectHideFlags: 0

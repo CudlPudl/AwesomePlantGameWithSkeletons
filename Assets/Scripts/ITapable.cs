@@ -5,4 +5,5 @@ using UnityEngine;
 public interface ITapable
 {
     void IsTapped();
+    void IsReleased();
 }

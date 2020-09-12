@@ -1,7 +1,8 @@
 ﻿using UnityEngine;
 using UnityEngine.Events;
 
-public class Nutrient : MonoBehaviour
+[System.Serializable]
+public class Nutrient
 {
     public enum NutrientType
     {
