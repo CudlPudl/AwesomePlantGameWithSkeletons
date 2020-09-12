@@ -122,4 +122,9 @@ public class Plant : MonoBehaviour
         _nutritionTimer = _nutritionCooldown;
         MoodBubbleManager.Instance.ReleaseMoodBubble(this);
     }
+
+    public void Reset()
+    {
+        MoodBubbleManager.Instance.ReleaseMoodBubble(this);
+    }
 }

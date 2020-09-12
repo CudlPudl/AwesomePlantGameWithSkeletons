@@ -18,7 +18,7 @@ public class Activity : MonoBehaviour
         if (_startTime + _holdTimeForNutrient < Time.time)
         {
             _startTime = Time.time;
-            NutrientsManager.Instance.AddNutrients(_nutrientType, 1);
+            NutrientsManager.Instance.AddToStorage(_nutrientType, 1);
         }
     }
 

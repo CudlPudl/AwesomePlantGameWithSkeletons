@@ -44,7 +44,21 @@ public class PlantPot : MonoBehaviour
 
     public void AddPlant()
     {
-        if (_hasPlant) return;
+        if (_hasPlant)
+        {
+            if (_currentPlant.IsFullyGrown())
+            {
+                RemovePlant();
+            }
+            return;
+        }
         SpawnPlant();
+    }
+
+    public void RemovePlant()
+    {
+        _currentPlant.Reset();
+        Destroy(_currentPlant.gameObject);
+        _hasPlant = false;
     }
 }

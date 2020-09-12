@@ -52,6 +52,7 @@ public class MoodBubbleManager : Singleton<MoodBubbleManager>
 
     public void ReleaseMoodBubble(Plant plant)
     {
+        if (!_moodBubbles.ContainsKey(plant)) return;
         var bubble = _moodBubbles[plant];
         _moodBubbles.Remove(plant);
         Destroy(bubble.gameObject);
