@@ -1,20 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &7507236272541406421
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7272862927031314824}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 70ee677b39a65a247b548812cd0b3c99, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _renderer: {fileID: 6293047902888345536}
-  _blend: 0
-  _values: []
 --- !u!65 &3849434079102988971
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -54,6 +39,21 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &7507236272541406421
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7272862927031314824}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70ee677b39a65a247b548812cd0b3c99, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _renderer: {fileID: 6293047902888345536}
+  _blend: 0
+  _values: []
 --- !u!1 &7507236272821736142
 GameObject:
   m_ObjectHideFlags: 0
@@ -183,6 +183,16 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 32e89b7dd490ceb40aff3d2d2bae9f7e,
+        type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 6139aed28156a2c4388e4d01bf3a047a, type: 2}
+    - target: {fileID: -7511558181221131132, guid: 32e89b7dd490ceb40aff3d2d2bae9f7e,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 6139aed28156a2c4388e4d01bf3a047a, type: 2}
     - target: {fileID: 919132149155446097, guid: 32e89b7dd490ceb40aff3d2d2bae9f7e,
         type: 3}
       propertyPath: m_Name
@@ -223,6 +233,21 @@ PrefabInstance:
       propertyPath: m_DirtyAABB
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4574085077149887257, guid: 32e89b7dd490ceb40aff3d2d2bae9f7e,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 6139aed28156a2c4388e4d01bf3a047a, type: 2}
+    - target: {fileID: 4574085077149887257, guid: 32e89b7dd490ceb40aff3d2d2bae9f7e,
+        type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 6139aed28156a2c4388e4d01bf3a047a, type: 2}
+    - target: {fileID: 4574085077149887257, guid: 32e89b7dd490ceb40aff3d2d2bae9f7e,
+        type: 3}
+      propertyPath: m_Materials.Array.data[2]
+      value: 
+      objectReference: {fileID: 2100000, guid: 6139aed28156a2c4388e4d01bf3a047a, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 32e89b7dd490ceb40aff3d2d2bae9f7e, type: 3}
 --- !u!1 &7272862927031314824 stripped
