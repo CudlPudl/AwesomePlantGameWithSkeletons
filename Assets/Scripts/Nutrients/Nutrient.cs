@@ -8,7 +8,8 @@ public class Nutrient : MonoBehaviour
         Pee = 0,
         Poo = 1,
         Coffee = 2,
-        Water = 3
+        Water = 3,
+        Valo = 4
     }
 
     public class NutrientEvent : UnityEvent<(NutrientType type, int Amount)> { }

@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5386041837930777359}
   - component: {fileID: 6293047902888345536}
+  - component: {fileID: 4625649806506259948}
   m_Layer: 0
   m_Name: Flower.004
   m_TagString: Untagged
@@ -88,6 +89,21 @@ SkinnedMeshRenderer:
     m_Center: {x: -0.021211624, y: 2.715008, z: 0.18230224}
     m_Extent: {x: 1.2715687, y: 2.0257494, z: 0.5219667}
   m_DirtyAABB: 0
+--- !u!114 &4625649806506259948
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4523151390859289489}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70ee677b39a65a247b548812cd0b3c99, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _renderer: {fileID: 6293047902888345536}
+  _blend: 0
+  _values: []
 --- !u!1 &7507236272821736142
 GameObject:
   m_ObjectHideFlags: 0
@@ -134,7 +150,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _personality: 1
   _root: {fileID: 7507236272821736136}
-  _blendShape: {fileID: 0}
+  _blendShape: {fileID: 4625649806506259948}
   MaxGrowthDuration: 5
   MaxSize: 5
   OnPickEvent:
