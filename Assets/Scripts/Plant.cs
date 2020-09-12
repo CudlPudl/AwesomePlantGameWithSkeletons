@@ -13,7 +13,8 @@ public class Plant : MonoBehaviour
         Cute = 0,
         Happy = 1,
         Sad = 2,
-        Grumpy = 3
+        Grumpy = 3,
+        Neutral = 4
     }
 
     [System.Serializable]
@@ -54,7 +55,7 @@ public class Plant : MonoBehaviour
     public void OnTapped()
     {
         if (!_demandNutrition) return;
-        if (NutrientsManager.Instance.Purchase(Nutrient.NutrientType.Coffee, GetNutritionCost()))
+        if (NutrientsManager.Instance.Purchase(NutrientsManager.Instance.GetNutrientTypeByPersonality(_personality), GetNutritionCost()))
         {
             OnNutritionGiven();
         }

@@ -10,7 +10,26 @@ public class NutrientsManager : Singleton<NutrientsManager>
     [SerializeField]
     private RectTransform _counterRoot;
 
+    [Serializable]
+    public struct PersonalityNutrient
+    {
+        public Nutrient.NutrientType Type;
+        public Plant.Personality Personality;
+    }
+
     private List<Nutrient> _nutrients = new List<Nutrient>();
+    [SerializeField]
+    private List<PersonalityNutrient> _personalityNutrients = new List<PersonalityNutrient>();
+
+    public Nutrient.NutrientType GetNutrientTypeByPersonality(Plant.Personality personality)
+    {
+        for (var i = 0; i < _personalityNutrients.Count; ++i)
+        {
+            if (_personalityNutrients[i].Personality == personality) return _personalityNutrients[i].Type;
+        }
+        // Forgot something from the list :(
+        return Nutrient.NutrientType.Poo;
+    }
 
     private void Start()
     {
