@@ -203,6 +203,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Nutrient_Machine2.0
       objectReference: {fileID: 0}
+    - target: {fileID: 7202271454713460447, guid: 8e209c12de0dc464aaa261614c51d152,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 0c85762f55a8a8b4385c394a42ef678f, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8e209c12de0dc464aaa261614c51d152, type: 3}
 --- !u!1001 &377565926
