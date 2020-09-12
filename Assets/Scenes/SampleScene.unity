@@ -2831,6 +2831,17 @@ MonoBehaviour:
   _prefab: {fileID: -2307518758623310485, guid: 2170c942b7504e143a982d73b2c136c9,
     type: 3}
   _counterRoot: {fileID: 340654708}
+  _personalityNutrients:
+  - Type: 0
+    Personality: 0
+  - Type: 1
+    Personality: 1
+  - Type: 2
+    Personality: 3
+  - Type: 3
+    Personality: 4
+  - Type: 4
+    Personality: 2
 --- !u!4 &2020873898
 Transform:
   m_ObjectHideFlags: 0
