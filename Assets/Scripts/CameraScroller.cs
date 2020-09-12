@@ -9,6 +9,9 @@ public class CameraScroller : MonoBehaviour
     private CinemachineDollyCart _cart;
     [SerializeField]
     private Camera _camera;
+    [SerializeField]
+    private float _speedMultiplier = 0.1f;
+
     private Vector3 _touchStart;
 
     private void Update()
@@ -21,7 +24,7 @@ public class CameraScroller : MonoBehaviour
         {
             Vector3 direction = _touchStart - Input.mousePosition;
             direction /= Screen.currentResolution.width;
-            _cart.m_Position += direction.x;
+            _cart.m_Position += direction.x * _speedMultiplier;
         }
     }
 }
