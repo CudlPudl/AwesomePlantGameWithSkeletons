@@ -24,6 +24,7 @@ public class Nutrient
     private NutrientType _type;
     public NutrientType GetNutrientType() => _type;
     private int _amount = 100;
+    public int GetAmount() => _amount;
 
     public bool HasNutrient(int cost) => _amount > cost;
     public bool PayNutrient(int cost)

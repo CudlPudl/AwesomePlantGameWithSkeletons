@@ -50,6 +50,7 @@ public class NutrientsManager : Singleton<NutrientsManager>
         _nutrients.Add(nutrient);
         var counter = Instantiate(_prefab, _counterRoot);
         nutrient.OnNutrientsChanged.AddListener(counter.OnNutrientsChanged);
+        counter.OnNutrientsChanged((type, nutrient.GetAmount()));
     }
 
     public bool Purchase(Nutrient.NutrientType type, int amount)

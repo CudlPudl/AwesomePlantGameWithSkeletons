@@ -27,7 +27,8 @@ public class PlantPot : MonoBehaviour
         var rnd = UnityEngine.Random.value;
         for (var i = 0; i < types.Length; ++i)
         {
-            if (rnd < 1 / count * (i + 1))
+            var comparison = rnd < 1f / (float)count * (float)(i + 1);
+            if (comparison)
             {
                 return (Plant.Personality)Enum.Parse(typeof(Plant.Personality), types[i]);
             }

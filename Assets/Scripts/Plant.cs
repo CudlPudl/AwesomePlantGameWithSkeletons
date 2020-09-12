@@ -31,6 +31,7 @@ public class Plant : MonoBehaviour
 
     [SerializeField]
     private Personality _personality = Personality.Cute;
+    public Personality GetPersonality() => _personality;
     [SerializeField]
     private Transform _root;
     [SerializeField]
@@ -104,16 +105,19 @@ public class Plant : MonoBehaviour
 
     private void OnNeedNutrition()
     {
+        if (_demandNutrition) return;
         OnDemandNutrition.Invoke(this);
         _demandNutrition = true;
         _demandTimer = 0;
-        Debug.LogWarning("NEED FOOD!");
+        MoodBubbleManager.Instance.AllocateMoodBubble(this);
     }
 
     private void OnNutritionGiven()
     {
+        if (!_demandNutrition) return;
         OnNutritionGet.Invoke(this);
         _demandNutrition = false;
         _nutritionTimer = _nutritionCooldown;
+        MoodBubbleManager.Instance.ReleaseMoodBubble(this);
     }
 }
