@@ -1564,7 +1564,7 @@ PrefabInstance:
     - target: {fileID: 4452571539982909549, guid: f79324ca42c9e964c80bd6c582d69d4d,
         type: 3}
       propertyPath: m_text
-      value: Masiina
+      value: Ravinteet
       objectReference: {fileID: 0}
     - target: {fileID: 7428862286598255896, guid: f79324ca42c9e964c80bd6c582d69d4d,
         type: 3}
@@ -2419,7 +2419,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Path: {fileID: 156647347}
-  m_PathPosition: 0.4316568
+  m_PathPosition: 0.0638032
   m_PositionUnits: 0
   m_PathOffset: {x: 0, y: 0, z: 0}
   m_XDamping: 0
@@ -3513,6 +3513,7 @@ MonoBehaviour:
     Personality: 4
   - Type: 4
     Personality: 2
+  _lightGenerationInterval: 4
 --- !u!4 &2020873898
 Transform:
   m_ObjectHideFlags: 0
