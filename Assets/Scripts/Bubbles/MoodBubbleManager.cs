@@ -34,7 +34,7 @@ public class MoodBubbleManager : Singleton<MoodBubbleManager>
     {
         //Move the bubble here to correct position on the screen.
         var r = bubble.GetRectTransform();
-        var pos = plant.gameObject.transform.position;
+        var pos = plant.GetMoodBubblePosition().position;
         var viewportPos = _camera.WorldToViewportPoint(pos);
         var isOnScreen = viewportPos.x >= 0 && viewportPos.x <= 1 && viewportPos.y >= 0 && viewportPos.y <= 1 && viewportPos.z > 0;
         SetActive(bubble.gameObject, isOnScreen);

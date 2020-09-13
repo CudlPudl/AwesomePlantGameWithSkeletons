@@ -9,6 +9,8 @@ public class NutrientsManager : Singleton<NutrientsManager>
     private NutrientCounter _prefab;
     [SerializeField]
     private RectTransform _counterRoot;
+    [SerializeField]
+    private int _startNutrientsAmount = 5;
 
     [Serializable]
     public struct PersonalityNutrient
@@ -58,7 +60,7 @@ public class NutrientsManager : Singleton<NutrientsManager>
 
     private void CreateNutrient(Nutrient.NutrientType type)
     {
-        var nutrient = new Nutrient(type);
+        var nutrient = new Nutrient(type, _startNutrientsAmount);
         _nutrients.Add(nutrient);
         var counter = Instantiate(_prefab, _counterRoot);
         nutrient.OnNutrientsChanged.AddListener(counter.OnNutrientsChanged);

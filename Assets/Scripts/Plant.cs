@@ -35,6 +35,8 @@ public class Plant : MonoBehaviour
     [SerializeField]
     private Transform _root;
     [SerializeField]
+    private Transform _moodBubbleRoot;
+    [SerializeField]
     private GrowthBlendshape _blendShape;
     [SerializeField]
     private float MaxGrowthDuration = 25f;
@@ -53,6 +55,8 @@ public class Plant : MonoBehaviour
 
     public float GetPlantSize() => Mathf.Clamp01(_growth / MaxGrowthDuration);
     public bool IsFullyGrown() => _growth >= MaxGrowthDuration;
+    public Transform GetMoodBubblePosition() => _moodBubbleRoot;
+
     public void OnTapped()
     {
         if (!_demandNutrition) return;

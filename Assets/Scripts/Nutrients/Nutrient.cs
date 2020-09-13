@@ -15,18 +15,19 @@ public class Nutrient
 
     public class NutrientEvent : UnityEvent<(NutrientType type, int Amount)> { }
 
-    public Nutrient(NutrientType type)
+    public Nutrient(NutrientType type, int amount)
     {
         _type = type;
+        _amount = amount;
     }
 
     public NutrientEvent OnNutrientsChanged = new NutrientEvent();
     private NutrientType _type;
     public NutrientType GetNutrientType() => _type;
-    private int _amount = 100;
+    private int _amount = 5;
     public int GetAmount() => _amount;
 
-    public bool HasNutrient(int cost) => _amount > cost;
+    public bool HasNutrient(int cost) => _amount >= cost;
     public bool PayNutrient(int cost)
     {
         if (!HasNutrient(cost)) return false;
