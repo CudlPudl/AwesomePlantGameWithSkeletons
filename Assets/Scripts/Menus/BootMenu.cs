@@ -5,6 +5,11 @@ using UnityEngine.SceneManagement;
 
 public class BootMenu : MonoBehaviour
 {
+    public void Start()
+    {
+        AudioPlayer.Instance.Reset();
+    }
+
     public void GoToCredits()
     {
         SceneManager.LoadScene(3, LoadSceneMode.Single);

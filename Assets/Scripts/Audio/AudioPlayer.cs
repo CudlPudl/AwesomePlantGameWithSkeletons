@@ -79,4 +79,9 @@ public class AudioPlayer : Singleton<AudioPlayer>
             track.Source.volume = track.Type == Mood.Neutral ? 1 : Mathf.Clamp01(_moodScale * (float)track.Type);
         }
     }
+
+    public void Reset()
+    {
+        _plantsDying.Clear();
+    }
 }
