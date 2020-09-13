@@ -137,4 +137,22 @@ public class NutrientsManager : Singleton<NutrientsManager>
     }
 
     #endregion
+
+    #region Update
+
+    private float _timer;
+    [SerializeField]
+    private float _lightGenerationInterval = 4f;
+    private void Update()
+    {
+        _timer += Time.deltaTime;
+        if (_timer >= _lightGenerationInterval)
+        {
+            _timer = 0f;
+            AddNutrients(Nutrient.NutrientType.Valo, 1);
+        }
+    }
+
+
+    #endregion
 }
