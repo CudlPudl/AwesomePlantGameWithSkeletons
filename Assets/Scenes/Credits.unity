@@ -261,7 +261,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "W\xE5ffel\nluminix6\nTarinatar\n\n"
+  m_text: "W\xE5ffel\nTaikamets\xE4\nTarinatar\n\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 26e7cad43207d5f48ba41a1e271f8858, type: 2}
   m_sharedMaterial: {fileID: 8593935556193880784, guid: 26e7cad43207d5f48ba41a1e271f8858,

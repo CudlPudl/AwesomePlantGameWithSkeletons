@@ -45,12 +45,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   globalTimescale: 2
+  globalVolume: 1
   plantMinNutritionCooldown: 2
   plantNutritionDemandDelay: 0.1
   plantNutritionNeedChance: 0.2
   plantMaxGrowthDuration: 200
   plantWitherDuration: 200
-  holdTimeForNutrient: 10
+  holdTimeForNutrient: 1
   nutrientsLightGenerationInterval: 4
 --- !u!114 &4612634013238629726
 MonoBehaviour:

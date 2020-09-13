@@ -2509,7 +2509,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Path: {fileID: 156647347}
-  m_PathPosition: 0.1532239
+  m_PathPosition: 0.0001576245
   m_PositionUnits: 0
   m_PathOffset: {x: 0, y: 0, z: 0}
   m_XDamping: 0
@@ -2731,7 +2731,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Path: {fileID: 473657884}
-  m_PathPosition: 1.398854
+  m_PathPosition: 0.6036001
   m_PositionUnits: 0
   m_PathOffset: {x: 0, y: 0, z: 0}
   m_XDamping: 0
@@ -3381,19 +3381,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1810471191}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1810471197
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1810471193}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f3990202002891341b53360d611dfbb2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _type: 2
 --- !u!65 &1810471198
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3407,48 +3394,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.5709487, y: 0.47159356, z: 0.9999999}
   m_Center: {x: -0.48602813, y: 0.62361157, z: 2.4699178}
---- !u!114 &1810471199
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1810471193}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9dfec1af5ddf8ca47ae2da62465f2f96, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  OnTappedEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1810471197}
-        m_MethodName: ClaimNutrients
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  OnReleasedEvent:
-    m_PersistentCalls:
-      m_Calls: []
---- !u!114 &1810471200
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1810471194}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f3990202002891341b53360d611dfbb2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _type: 3
 --- !u!65 &1810471201
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3462,48 +3407,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.57094884, y: 0.47159356, z: 0.9999999}
   m_Center: {x: -1.3420538, y: 0.6144, z: 2.4699125}
---- !u!114 &1810471202
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1810471194}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9dfec1af5ddf8ca47ae2da62465f2f96, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  OnTappedEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1810471200}
-        m_MethodName: ClaimNutrients
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  OnReleasedEvent:
-    m_PersistentCalls:
-      m_Calls: []
---- !u!114 &1810471203
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1810471195}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f3990202002891341b53360d611dfbb2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _type: 1
 --- !u!65 &1810471204
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3517,48 +3420,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.5709487, y: 0.4715936, z: 0.99999976}
   m_Center: {x: 0.3515554, y: 0.6240716, z: 2.4699173}
---- !u!114 &1810471205
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1810471195}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9dfec1af5ddf8ca47ae2da62465f2f96, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  OnTappedEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1810471203}
-        m_MethodName: ClaimNutrients
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  OnReleasedEvent:
-    m_PersistentCalls:
-      m_Calls: []
---- !u!114 &1810471206
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1810471196}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f3990202002891341b53360d611dfbb2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _type: 0
 --- !u!65 &1810471207
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3572,35 +3433,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.5709487, y: 0.47159356, z: 0.99999976}
   m_Center: {x: 1.1685352, y: 0.6434444, z: 2.4699163}
---- !u!114 &1810471208
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1810471196}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9dfec1af5ddf8ca47ae2da62465f2f96, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  OnTappedEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1810471206}
-        m_MethodName: ClaimNutrients
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  OnReleasedEvent:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!4 &1856397853 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4790338576223158728, guid: b8096c4c288f78b4f844073e2bd3de10,
