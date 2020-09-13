@@ -32,7 +32,7 @@ public class AudioClipManager : Singleton<AudioClipManager>
         var source = GetAudioSource();
         source.clip = clip;
         source.loop = loop;
-        source.volume = volume;
+        source.volume = volume * GameManager.Instance.GetGlobalVolume();
         source.Play();
         return source;
     }

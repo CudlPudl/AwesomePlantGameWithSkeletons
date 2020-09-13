@@ -76,7 +76,7 @@ public class AudioPlayer : Singleton<AudioPlayer>
         foreach (var track in _tracks)
         {
             //var difference = _influenceChangePerSecond * Time.deltaTime;
-            track.Source.volume = track.Type == Mood.Neutral ? 1 : Mathf.Clamp01(_moodScale * (float)track.Type);
+            track.Source.volume = track.Type == Mood.Neutral ? GameManager.Instance.GetGlobalVolume() : Mathf.Clamp01(_moodScale * (float)track.Type * GameManager.Instance.GetGlobalVolume());
         }
     }
 

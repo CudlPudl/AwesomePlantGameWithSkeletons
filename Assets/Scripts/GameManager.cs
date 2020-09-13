@@ -4,8 +4,20 @@ using UnityEngine;
 
 public class GameManager : Singleton<GameManager>
 {
-    [SerializeField, Range(0.01f, 2f)]
+    [SerializeField]
     private float globalTimescale = 1f;
+    public void SetTimeScale(float value)
+    {
+        globalTimescale = value;
+    }
+    public float GetGlobalTimescale() => globalTimescale;
+    [SerializeField]
+    private float globalVolume = 1f;
+    public void SetGlobalVolume(float value)
+    {
+        globalVolume = value;
+    }
+    public float GetGlobalVolume() => globalVolume;
 
     [Header("Plant")]
     [SerializeField, Tooltip("Minimum time delay between plant requesting more nutrients")]
