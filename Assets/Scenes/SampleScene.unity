@@ -695,6 +695,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 451740534}
+  - component: {fileID: 451740536}
+  - component: {fileID: 451740535}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -716,6 +718,37 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &451740535
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 451740533}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6fea0d025eafad45ba981641ebdf4a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &451740536
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 451740533}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24283976e02490647afd80eadd055f2c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  globalTimescale: 1
+  plantMinNutritionCooldown: 5
+  plantNutritionDemandDelay: 0.1
+  plantNutritionNeedChance: 0.2
+  plantMaxGrowthDuration: 25
+  plantWitherDuration: 20
+  nutrientsLightGenerationInterval: 4
 --- !u!1 &461430220
 GameObject:
   m_ObjectHideFlags: 0
@@ -3543,7 +3576,6 @@ MonoBehaviour:
     Personality: 4
   - Type: 4
     Personality: 2
-  _lightGenerationInterval: 4
 --- !u!4 &2020873898
 Transform:
   m_ObjectHideFlags: 0
