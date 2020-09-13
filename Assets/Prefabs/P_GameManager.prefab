@@ -44,13 +44,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24283976e02490647afd80eadd055f2c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  globalTimescale: 1
-  plantMinNutritionCooldown: 5
+  globalTimescale: 2
+  plantMinNutritionCooldown: 2
   plantNutritionDemandDelay: 0.1
   plantNutritionNeedChance: 0.2
-  plantMaxGrowthDuration: 25
-  plantWitherDuration: 20
-  holdTimeForNutrient: 1
+  plantMaxGrowthDuration: 200
+  plantWitherDuration: 200
+  holdTimeForNutrient: 10
   nutrientsLightGenerationInterval: 4
 --- !u!114 &4612634013238629726
 MonoBehaviour:
