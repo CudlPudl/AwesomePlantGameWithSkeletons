@@ -8,8 +8,6 @@ public class Activity : MonoBehaviour
     [SerializeField]
     private Nutrient.NutrientType _nutrientType;
     [SerializeField]
-    private float _holdTimeForNutrient = 1f;
-    [SerializeField]
     private UnityEvent OnStartHold = new UnityEvent();
     [SerializeField]
     private UnityEvent OnHoldEnd = new UnityEvent();
@@ -20,7 +18,7 @@ public class Activity : MonoBehaviour
     public void Update()
     {
         if (!_isHold) return;
-        if (_startTime + _holdTimeForNutrient < Time.time)
+        if (_startTime + GameManager.Instance.GetActivityHoldTimeForNutrient() < Time.time)
         {
             _startTime = Time.time;
             NutrientsManager.Instance.AddToStorage(_nutrientType, 1);
