@@ -30,9 +30,6 @@ public class AudioClipPlayer: MonoBehaviour
 
     public void OnDestroy()
     {
-        if (_source != null && _loop)
-        {
-            _source.Stop();
-        }
+        Stop();
     }
 }
