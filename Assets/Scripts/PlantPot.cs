@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class PlantPot : MonoBehaviour
 {
@@ -12,6 +13,9 @@ public class PlantPot : MonoBehaviour
     private Plant _currentPlant;
     private bool _hasPlant = false;
 
+    public UnityEvent OnPlantSpawn = new UnityEvent();
+    public UnityEvent OnPlantDie = new UnityEvent();
+
     private void SpawnPlant()
     {
         _currentPlant = Instantiate(_prefab, _root);
@@ -19,6 +23,7 @@ public class PlantPot : MonoBehaviour
         _currentPlant.OnPickEvent.AddListener(OnPlantDestroyed);
         _currentPlant.Pot = this;
         _hasPlant = true;
+        OnPlantSpawn.Invoke();
     }
 
     private Plant.Personality GetRandomPersonality()
@@ -41,6 +46,7 @@ public class PlantPot : MonoBehaviour
     {
         _currentPlant = null;
         _hasPlant = false;
+        OnPlantDie.Invoke();
     }
 
     public void AddPlant()
@@ -61,5 +67,6 @@ public class PlantPot : MonoBehaviour
         _currentPlant.Reset();
         Destroy(_currentPlant.gameObject);
         _hasPlant = false;
+        OnPlantDie.Invoke();
     }
 }
