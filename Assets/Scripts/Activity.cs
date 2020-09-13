@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Activity : MonoBehaviour
 {
@@ -8,6 +9,10 @@ public class Activity : MonoBehaviour
     private Nutrient.NutrientType _nutrientType;
     [SerializeField]
     private float _holdTimeForNutrient = 1f;
+    [SerializeField]
+    private UnityEvent OnStartHold = new UnityEvent();
+    [SerializeField]
+    private UnityEvent OnHoldEnd = new UnityEvent();
 
     private float _startTime;
     private bool _isHold;
@@ -26,10 +31,12 @@ public class Activity : MonoBehaviour
     {
         _isHold = true;
         _startTime = Time.time;
+        OnStartHold.Invoke();
     }
 
     public void EndHold()
     {
+        OnHoldEnd.Invoke();
         _isHold = false;
     }
 

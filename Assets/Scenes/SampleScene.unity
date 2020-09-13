@@ -2414,7 +2414,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Path: {fileID: 156647347}
-  m_PathPosition: 1.03828
+  m_PathPosition: 0
   m_PositionUnits: 0
   m_PathOffset: {x: 0, y: 0, z: 0}
   m_XDamping: 0
@@ -3802,7 +3802,7 @@ PrefabInstance:
     - target: {fileID: 4486102826931323623, guid: a8e94583eaf11ba4d999ad241065274f,
         type: 3}
       propertyPath: m_Name
-      value: P_AudioPlayer
+      value: P_AudioManager
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a8e94583eaf11ba4d999ad241065274f, type: 3}

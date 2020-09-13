@@ -39,10 +39,10 @@ public class AudioPlayer : Singleton<AudioPlayer>
     {
         foreach(var clip in _clips)
         {
-            var go = new GameObject();
+            var go = new GameObject("AudioSource_Music");
             go.transform.SetParent(transform);
-            var audioTrack = new AudioTrack();
             var source = go.AddComponent<AudioSource>();
+            var audioTrack = new AudioTrack();
             source.clip = clip.Clip;
             source.volume = 0;
             source.loop = true;
