@@ -48,10 +48,17 @@ MonoBehaviour:
   globalVolume: 1
   plantMinNutritionCooldown: 2
   plantNutritionDemandDelay: 0.1
+<<<<<<< Updated upstream
   plantNutritionNeedChance: 0.2
   plantMaxGrowthDuration: 200
   plantWitherDuration: 200
   holdTimeForNutrient: 1
+=======
+  plantNutritionNeedChance: 1
+  plantMaxGrowthDuration: 100
+  plantWitherDuration: 100
+  holdTimeForNutrient: 10
+>>>>>>> Stashed changes
   nutrientsLightGenerationInterval: 4
 --- !u!114 &4612634013238629726
 MonoBehaviour:
