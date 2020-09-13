@@ -40,4 +40,9 @@ public class BootMenu : MonoBehaviour
         SceneManager.UnloadSceneAsync(SceneManager.GetActiveScene());
         Destroy(loader.gameObject);
     }
+
+    public void ExitGame()
+    {
+        Application.Quit();
+    }
 }

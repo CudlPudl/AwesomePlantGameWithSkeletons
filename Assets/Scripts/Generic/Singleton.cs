@@ -15,6 +15,6 @@ public class Singleton<T> : MonoBehaviour where T : MonoBehaviour
             _instance = (T)FindObjectOfType(typeof(T));
             return;
         }
-        Destroy(this);
+        Destroy(this.gameObject);
     }
 }
