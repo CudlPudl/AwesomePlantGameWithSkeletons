@@ -4457,7 +4457,7 @@ GameObject:
   - component: {fileID: 7125083543104327394}
   - component: {fileID: 6263185613201598659}
   m_Layer: 0
-  m_Name: cofee_activity
+  m_Name: kahvi_activity
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
