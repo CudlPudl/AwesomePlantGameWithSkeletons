@@ -207,7 +207,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _renderer: {fileID: 6293047902888345536}
   _blend: 0
-  _values: []
 --- !u!1 &7507236272821736142
 GameObject:
   m_ObjectHideFlags: 0
@@ -218,6 +217,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7507236272821736136}
   - component: {fileID: 7507236272821736143}
+  - component: {fileID: 1757688743210017011}
   m_Layer: 0
   m_Name: P_Plant
   m_TagString: Untagged
@@ -254,10 +254,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ec19ff8bac6fde4388becb073d2b471, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Pot: {fileID: 0}
+  _witherDuration: 20
   _personality: 1
   _root: {fileID: 7507236272821736136}
   _moodBubbleRoot: {fileID: 6939962849158946193}
   _blendShape: {fileID: 4625649806506259948}
+  _witherVisualization: {fileID: 1757688743210017011}
   MaxGrowthDuration: 20
   MaxSize: 5
   _nutritionCost: 1
@@ -271,3 +274,18 @@ MonoBehaviour:
   OnNutritionGet:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &1757688743210017011
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7507236272821736142}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b57a92aeebf474449b9dc9c817da849, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _renderer: {fileID: 6293047902888345536}
+  _witherColor: {r: 0.16037738, g: 0.13843897, b: 0.13843897, a: 1}
+  _witherScale: {x: 0.5, y: 0.95, z: 0.5}

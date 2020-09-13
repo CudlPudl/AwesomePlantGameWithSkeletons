@@ -17,6 +17,7 @@ public class PlantPot : MonoBehaviour
         _currentPlant = Instantiate(_prefab, _root);
         _currentPlant.SetPersonality(GetRandomPersonality());
         _currentPlant.OnPickEvent.AddListener(OnPlantDestroyed);
+        _currentPlant.Pot = this;
         _hasPlant = true;
     }
 

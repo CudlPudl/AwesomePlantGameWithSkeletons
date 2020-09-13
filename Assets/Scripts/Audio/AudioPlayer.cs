@@ -4,28 +4,36 @@ using UnityEngine;
 
 public class AudioPlayer : Singleton<AudioPlayer>
 {
+    public enum Mood
+    {
+        Death = -1,
+        Neutral = 0,
+        Happy = 1
+    }
+
+    [System.Serializable]
+    public struct MoodPair
+    {
+        public Mood Type;
+        public AudioClip Clip;
+    }
+
     [System.Serializable]
     public class AudioTrack
     {
-        public Plant.Personality Personality;
+        public Mood Type;
         public AudioSource Source;
-        public float Influence;
-        public bool IsInfluenceIncreasing;
-        public void SetVolume()
-        {
-            Source.volume = Mathf.Clamp01(Influence);
-        }
     }
+
+    private float _moodScale = 1;
 
     [SerializeField]
     private float _influenceChangePerSecond = 0.5f;
 
     [SerializeField]
-    private Dictionary<Plant.Personality, bool> _addInfluence = new Dictionary<Plant.Personality, bool>();
-
-    [SerializeField]
-    private List<(Plant.Personality Personality, AudioClip Clip)> _clips;
+    private List<MoodPair> _clips;
     private List<AudioTrack> _tracks = new List<AudioTrack>();
+    private List<Plant> _plantsDying = new List<Plant>();
 
     public void Start()
     {
@@ -37,38 +45,38 @@ public class AudioPlayer : Singleton<AudioPlayer>
             var source = go.AddComponent<AudioSource>();
             source.clip = clip.Clip;
             source.volume = 0;
+            source.loop = true;
             source.Play();
             audioTrack.Source = source;
-            audioTrack.Personality = clip.Personality;
-            audioTrack.Influence = 0;
-            audioTrack.IsInfluenceIncreasing = false;
+            audioTrack.Type = clip.Type;
             _tracks.Add(audioTrack);
         }
+        //Sync correct volumes.
+        Update();
+    }
+
+    public void AddDeathFlag(Plant plant)
+    {
+        if (_plantsDying.Contains(plant)) return;
+        _plantsDying.Add(plant);
+    }
+
+    public void ClearFlag(Plant plant)
+    {
+        if (!_plantsDying.Contains(plant)) return;
+        _plantsDying.Remove(plant);
     }
 
     public void Update()
     {
+        var direction = _plantsDying.Count > 0 ? -1 : 1;
+        var delta = _influenceChangePerSecond * Time.deltaTime * direction;
+        _moodScale = Mathf.Clamp(_moodScale + delta, -1, 1);
+
         foreach (var track in _tracks)
         {
-            var difference = _influenceChangePerSecond * Time.deltaTime;
-            if (track.IsInfluenceIncreasing)
-            {
-                difference *= -1;
-            }
-            track.Influence = Mathf.Clamp01(track.Influence + difference);
-            track.SetVolume();
-        }
-    }
-
-    public void SetInfluence(Plant.Personality personality, bool isInfluenceIncreasing)
-    {
-        for (var i = 0; i < _tracks.Count; ++i)
-        {
-            if (_tracks[i].Personality == personality)
-            {
-                _tracks[i].IsInfluenceIncreasing = isInfluenceIncreasing;
-                return;
-            }
+            //var difference = _influenceChangePerSecond * Time.deltaTime;
+            track.Source.volume = track.Type == Mood.Neutral ? 1 : Mathf.Clamp01(_moodScale * (float)track.Type);
         }
     }
 }

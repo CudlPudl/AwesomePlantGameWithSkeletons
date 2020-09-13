@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 using UnityEngine.Events;
 
 public class Plant : MonoBehaviour
@@ -20,6 +21,9 @@ public class Plant : MonoBehaviour
     [System.Serializable]
     public class PlantEvent : UnityEvent<Plant> { }
 
+    [HideInInspector]
+    public PlantPot Pot;
+
     private float _growth = 0f;
     private bool _demandNutrition = false;
     private float _nutritionCooldown = 5f;
@@ -27,7 +31,10 @@ public class Plant : MonoBehaviour
     private float _demandTimer = 0f;
     private float _demandDelay = 0.1f;
 
-    private float _wither = 20f;
+    [SerializeField]
+    private float _witherDuration = 20f;
+    private float _witherTimer = 0f;
+    private bool _isDying;
 
     [SerializeField]
     private Personality _personality = Personality.Cute;
@@ -38,6 +45,8 @@ public class Plant : MonoBehaviour
     private Transform _moodBubbleRoot;
     [SerializeField]
     private GrowthBlendshape _blendShape;
+    [SerializeField]
+    private PlantWitherVisualization _witherVisualization;
     [SerializeField]
     private float MaxGrowthDuration = 25f;
     [SerializeField]
@@ -92,7 +101,17 @@ public class Plant : MonoBehaviour
         }
         if (_demandNutrition)
         {
-            
+            _witherTimer += Time.deltaTime;
+            _witherVisualization.SetWitherLevel(_witherTimer / _witherDuration);
+            if (_witherTimer >= _witherDuration * 0.5f && !_isDying)
+            {
+                _isDying = true;
+                AudioPlayer.Instance.AddDeathFlag(this);
+            }
+            if (_witherTimer >= _witherDuration)
+            {
+                Die();
+            }
         }
     }
 
@@ -114,8 +133,9 @@ public class Plant : MonoBehaviour
         if (_demandNutrition) return;
         OnDemandNutrition.Invoke(this);
         _demandNutrition = true;
-        _demandTimer = 0;
+        _demandTimer = 0f;
         MoodBubbleManager.Instance.AllocateMoodBubble(this);
+        _witherTimer = 0f;
     }
 
     private void OnNutritionGiven()
@@ -125,10 +145,22 @@ public class Plant : MonoBehaviour
         _demandNutrition = false;
         _nutritionTimer = _nutritionCooldown;
         MoodBubbleManager.Instance.ReleaseMoodBubble(this);
+        AudioPlayer.Instance.ClearFlag(this);
+        _isDying = false;
+        _witherTimer = 0f;
+        _witherVisualization.SetWitherLevel(0f);
     }
 
     public void Reset()
     {
         MoodBubbleManager.Instance.ReleaseMoodBubble(this);
+        AudioPlayer.Instance.ClearFlag(this);
+    }
+
+    private void Die()
+    {
+        Reset();
+        if (Pot == null) return;
+        Pot.RemovePlant();
     }
 }

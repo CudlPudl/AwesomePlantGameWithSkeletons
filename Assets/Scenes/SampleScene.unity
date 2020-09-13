@@ -680,6 +680,57 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e23a95ce1fa62ad4b95d10fc0417884c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &405548068
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 405548070}
+  - component: {fileID: 405548069}
+  m_Layer: 0
+  m_Name: AudioPlayer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &405548069
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 405548068}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac361fd21d3ba5543aae6992c60a29fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _influenceChangePerSecond: 0.33
+  _clips:
+  - Type: 0
+    Clip: {fileID: 8300000, guid: f49451ceff7a41e48b27ca7e0d56afd5, type: 3}
+  - Type: -1
+    Clip: {fileID: 8300000, guid: a2761cf641471dd4e89085fec9d75e5e, type: 3}
+  - Type: 1
+    Clip: {fileID: 8300000, guid: 383ec8565f80fc54ba4b18ef9e9965fe, type: 3}
+--- !u!4 &405548070
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 405548068}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -490.3189, y: 1.2783446, z: 70.480515}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &421169258 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6079208806151316521, guid: e47fe6fcd3064d747bf43144b81fbb15,
@@ -2392,9 +2443,9 @@ MonoBehaviour:
   m_LookaheadIgnoreY: 0
   m_HorizontalDamping: 0
   m_VerticalDamping: 0
-  m_ScreenX: 0.4979932
-  m_ScreenY: 0.7509749
-  m_DeadZoneWidth: 0
+  m_ScreenX: 0.417366
+  m_ScreenY: 0.7401557
+  m_DeadZoneWidth: 0.002239642
   m_DeadZoneHeight: 0
   m_SoftZoneWidth: 0.6385546
   m_SoftZoneHeight: 0.3787862
@@ -2414,7 +2465,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Path: {fileID: 156647347}
-  m_PathPosition: 0.4685271
+  m_PathPosition: 0.07380305
   m_PositionUnits: 0
   m_PathOffset: {x: 0, y: 0, z: 0}
   m_XDamping: 0
@@ -2636,7 +2687,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Path: {fileID: 473657884}
-  m_PathPosition: 1.100361
+  m_PathPosition: 0.1950736
   m_PositionUnits: 0
   m_PathOffset: {x: 0, y: 0, z: 0}
   m_XDamping: 0
