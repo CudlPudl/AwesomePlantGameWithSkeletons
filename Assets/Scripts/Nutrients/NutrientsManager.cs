@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -141,12 +140,10 @@ public class NutrientsManager : Singleton<NutrientsManager>
     #region Update
 
     private float _timer;
-    [SerializeField]
-    private float _lightGenerationInterval = 4f;
     private void Update()
     {
         _timer += Time.deltaTime;
-        if (_timer >= _lightGenerationInterval)
+        if (_timer >= GameManager.Instance.GetNutrientsLightGenerationInterval())
         {
             _timer = 0f;
             AddNutrients(Nutrient.NutrientType.Valo, 1);

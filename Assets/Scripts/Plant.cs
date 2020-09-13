@@ -6,7 +6,7 @@ public class Plant : MonoBehaviour
 {
     public void Start()
     {
-        _nutritionTimer = _nutritionCooldown;
+        _nutritionTimer = GameManager.Instance.GetPlantMinNutritionCooldown();
     }
 
     public enum Personality
@@ -26,13 +26,9 @@ public class Plant : MonoBehaviour
 
     private float _growth = 0f;
     private bool _demandNutrition = false;
-    private float _nutritionCooldown = 5f;
     private float _nutritionTimer = 5f;
     private float _demandTimer = 0f;
-    private float _demandDelay = 0.1f;
 
-    [SerializeField]
-    private float _witherDuration = 20f;
     private float _witherTimer = 0f;
     private bool _isDying;
 
@@ -48,13 +44,9 @@ public class Plant : MonoBehaviour
     [SerializeField]
     private PlantWitherVisualization _witherVisualization;
     [SerializeField]
-    private float MaxGrowthDuration = 25f;
-    [SerializeField]
     private float MaxSize = 5f;
     [SerializeField]
     private int _nutritionCost = 1;
-    [SerializeField]
-    private float _nutritionNeedChance = 0.2f;
 
     public int GetNutritionCost() => _nutritionCost;
 
@@ -62,8 +54,8 @@ public class Plant : MonoBehaviour
     public PlantEvent OnDemandNutrition = new PlantEvent();
     public PlantEvent OnNutritionGet = new PlantEvent();
 
-    public float GetPlantSize() => Mathf.Clamp01(_growth / MaxGrowthDuration);
-    public bool IsFullyGrown() => _growth >= MaxGrowthDuration;
+    public float GetPlantSize() => Mathf.Clamp01(_growth / GameManager.Instance.GetPlantMaxGrowthDuration());
+    public bool IsFullyGrown() => _growth >= GameManager.Instance.GetPlantMaxGrowthDuration();
     public Transform GetMoodBubblePosition() => _moodBubbleRoot;
 
     public void OnTapped()
@@ -82,7 +74,7 @@ public class Plant : MonoBehaviour
 
     private void Awake()
     {
-        _nutritionTimer = _nutritionCooldown;
+        _nutritionTimer = GameManager.Instance.GetPlantMinNutritionCooldown();
         //Avoid setting the correct growth state one frame too late.
         _blendShape.SetBlendValue(GetPlantSize());
     }
@@ -102,13 +94,13 @@ public class Plant : MonoBehaviour
         if (_demandNutrition)
         {
             _witherTimer += Time.deltaTime;
-            _witherVisualization.SetWitherLevel(_witherTimer / _witherDuration);
-            if (_witherTimer >= _witherDuration * 0.5f && !_isDying)
+            _witherVisualization.SetWitherLevel(_witherTimer / GameManager.Instance.GetPlantWitherDuration());
+            if (_witherTimer >= GameManager.Instance.GetPlantWitherDuration() * 0.5f && !_isDying)
             {
                 _isDying = true;
                 AudioPlayer.Instance.AddDeathFlag(this);
             }
-            if (_witherTimer >= _witherDuration)
+            if (_witherTimer >= GameManager.Instance.GetPlantWitherDuration())
             {
                 Die();
             }
@@ -118,10 +110,10 @@ public class Plant : MonoBehaviour
     private void TickNutritionNeed()
     {
         _demandTimer += Time.deltaTime;
-        if (_demandTimer >= _demandDelay)
+        if (_demandTimer >= GameManager.Instance.GetPlantNutritionDemandDelay())
         {
             _demandTimer = 0;
-            if (Random.value < _nutritionNeedChance)
+            if (Random.value < GameManager.Instance.GetPlantNutritionNeedChance())
             {
                 OnNeedNutrition();
             }
@@ -143,7 +135,7 @@ public class Plant : MonoBehaviour
         if (!_demandNutrition) return;
         OnNutritionGet.Invoke(this);
         _demandNutrition = false;
-        _nutritionTimer = _nutritionCooldown;
+        _nutritionTimer = GameManager.Instance.GetPlantMinNutritionCooldown();
         MoodBubbleManager.Instance.ReleaseMoodBubble(this);
         AudioPlayer.Instance.ClearFlag(this);
         _isDying = false;
