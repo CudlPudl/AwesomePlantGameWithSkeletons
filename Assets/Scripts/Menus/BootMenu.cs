@@ -5,6 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class BootMenu : MonoBehaviour
 {
+    [SerializeField]
+    private DummyLoader _loader;
+
     public void Start()
     {
         AudioPlayer.Instance.Reset();
@@ -17,10 +20,10 @@ public class BootMenu : MonoBehaviour
 
     public void StartGame()
     {
-        var go = new GameObject("GameLoader");
-        var dummyLoader = go.AddComponent<DummyLoader>();
-        DontDestroyOnLoad(go);
-        dummyLoader.StartCoroutine(LoadGame(dummyLoader));
+        var go = Instantiate(_loader);
+        DontDestroyOnLoad(go.gameObject);
+        //go.StartCoroutine(LoadGame(go));
+        go.LoadScene();
     }
 
     public IEnumerator LoadGame(DummyLoader loader)

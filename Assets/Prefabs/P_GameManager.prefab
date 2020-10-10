@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &4612634013238629724
+--- !u!1 &7492163099564473383
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,23 +8,23 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4612634013238629727}
-  - component: {fileID: 4612634013238629713}
-  - component: {fileID: 4612634013238629726}
+  - component: {fileID: 7492163099564473378}
+  - component: {fileID: 7492163099564473377}
+  - component: {fileID: 7492163099564473376}
   m_Layer: 0
-  m_Name: P_GameManager
+  m_Name: P_GameManager 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4612634013238629727
+--- !u!4 &7492163099564473378
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4612634013238629724}
+  m_GameObject: {fileID: 7492163099564473383}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -32,41 +32,34 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4612634013238629713
+--- !u!114 &7492163099564473377
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4612634013238629724}
+  m_GameObject: {fileID: 7492163099564473383}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 24283976e02490647afd80eadd055f2c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  globalTimescale: 2
+  globalTimescale: 1
   globalVolume: 1
-  plantMinNutritionCooldown: 2
+  plantMinNutritionCooldown: 5
   plantNutritionDemandDelay: 0.1
-<<<<<<< Updated upstream
   plantNutritionNeedChance: 0.2
-  plantMaxGrowthDuration: 200
-  plantWitherDuration: 200
+  plantMaxGrowthDuration: 25
+  plantWitherDuration: 20
   holdTimeForNutrient: 1
-=======
-  plantNutritionNeedChance: 1
-  plantMaxGrowthDuration: 100
-  plantWitherDuration: 100
-  holdTimeForNutrient: 10
->>>>>>> Stashed changes
   nutrientsLightGenerationInterval: 4
---- !u!114 &4612634013238629726
+--- !u!114 &7492163099564473376
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4612634013238629724}
+  m_GameObject: {fileID: 7492163099564473383}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e6fea0d025eafad45ba981641ebdf4a6, type: 3}
